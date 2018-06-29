@@ -1,0 +1,10 @@
+<ul>
+	{% if cats %}
+		{% for cat in cats %}
+			<li>
+				<i><a href='{% url 'rango:show_category' cat.slug%}'>{{cat.slug}}</a></i>
+				<strong>{{cat.likes}} like{{cat.likes|pluralize}}</strong>
+			</li>
+		{% endfor %}
+	{% endif %}
+</ul>

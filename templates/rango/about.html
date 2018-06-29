@@ -1,0 +1,16 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block%}
+About
+{% endblock %}
+{% block body_block%}
+	<img src="{% static 'images/Sunday Moses6.jpg'%}" class="mx-auto d-block rounded-circle img-fluid " alt='My picture' /><br/>
+	<h5 class="text-center">{{ text1 }}</h5>
+<!--	<p>{{ text2 }} </p>
+<img src='{{ MEDIA_URL }}cat.jpg'>
+	</br>-->
+{% endblock %}
+{% block footer%}
+<p class="text-center">Current date and time: {{ last_visit }}.</p>
+<h3><li><a href='{% url 'rango:about' %}'>Top</a></li></h3>
+{% endblock %}

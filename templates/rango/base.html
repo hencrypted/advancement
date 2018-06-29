@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load rango_template_tags %}
+
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			Rango :::
+			{% block title_block %}
+				How to Tango with Django!
+			{% endblock %}
+		</title>
+   <!-- Latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<nav class="navbar-expand-sm bg-dark navbar-dark ">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarcollapse">
+			<ul class="navbar-nav">
+				<a class="navbar-brand" href="{% url "rango:index" %}">Rango</a>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url "rango:index" %}">Home</a>
+				</li>	
+				<li class="nav-item">
+					<a class="nav-link" href="{% url "rango:about" %}">About</a>
+				</li>
+				<form class="form-inline" action="">
+					<input type="text" class="form-control mr-sm-2" placeholder="Search Rango">
+					<button type="submit" class="btn btn-success">Search</button>
+				</form>
+				{% if user.is_authenticated %}
+				<li class="nav-item">
+					<a class="nav-link" href="{% url "rango:logout" %}">Logout</a>
+				</li>
+				<span class="navbar-text">You're logged in as {{user.username}} </span>
+
+				{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="{% url "rango:register" %}">Register Here</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url "rango:login" %}">Login</a>
+				</li>
+				<span class="navbar-text"> Welcome, Login to rango</span>
+				{% endif %}
+			</ul>
+		</div>
+		</nav>
+
+		<div class="container-fluid jumbotron">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar bg-light">
+					{% block sidebar_block %}
+					<h4 class="text-center">All categories</h4>
+						{% get_category_list %}
+					{% endblock %}
+				</div>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					{% block body_block %}
+					{% endblock %}
+				</div>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					{% block footer%}
+					{% endblock %}
+					<hr/>
+					<p><strong><p>copyright 2018</p></strong></p>
+					<hr/>
+				</div>
+			</div>
+		</div>
+
+    <!-- JQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Popper JS-->
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!--Latest compiled javascript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
+

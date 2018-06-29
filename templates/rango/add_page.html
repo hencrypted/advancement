@@ -1,0 +1,32 @@
+{% extends 'rango/base.html' %}
+
+{% block title_block %}
+{{ category.name}}
+{% endblock %}
+
+{% block body_block %}
+{% if category %}
+<h2><atrong>{{ category.name }}</strong></h2>
+<form id="add_pages" method='post' action='/rango/{{category.slug}}/add_page/'>
+{% csrf_token %}
+{% for hidden in form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+{% for field in form.visible_fields %}
+<ul>
+	<strong>{{ field.errors }}</strong>
+	<p>{{ field.help_text }}</p>
+	{{ field }}
+</ul>
+{% endfor %}
+<input type='submit' name='submit' value='Submit' class="bg-info">
+</form>
+{% endif %}
+{% endblock %}
+{% block footer %}
+<ul>
+<h3><li class="list-unstyled"><a href='{% url 'rango:add_page' category.slug %}'>Top</a></li>
+<li class="list-unstyled"><a href='{% url 'rango:show_category' category.slug %}'>Back</a></li>
+</h3>
+</ul>
+{% endblock%}

@@ -1,0 +1,51 @@
+{% extends 'rango/base.html'%}
+{% load staticfiles %}
+
+
+{% block body_block %}
+{% if user.is_authenticated %}
+<div class="display-4">
+	<p class="text-center">Welcome, {{user.username.title}} </p>
+</div>
+{% else %}
+<div class="display-4">
+	<p class="text-center">Welcome to Rango!</p>
+</div>
+{% endif %}
+	{% if categories %}
+		<h2 class="text-center"> Top 5 Most Liked Categories</h2>
+		<div class="container-fluid">
+		<ul class="text-center">
+			{% for category in categories %}
+			<li class="list-unstyled">
+				<a href='{% url 'rango:show_category' category.slug %}'>{{ category.name }} </a>
+				<strong>{{category.likes}} like{{category.likes|pluralize}}</strong>
+			</li>
+			{% endfor %}
+		</ul>
+		</div>
+		{% else %}
+			<strong> There are no categories present</strong>
+		{% endif %}
+		{% if pages %}
+		<h2 class="text-center">Most Viewed Pages</h2>
+		<ul class="text-center">
+			{% for page in pages %}
+			<li class="list-unstyled"><a href='{{page.url}}'>{{ page.title }}</a></li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+		<img src="{% static "images/rango.jpg"%}" 
+		 class="mx-auto d-block rounded img-fluid "style="width:800px;" alt ='Picture of the Simpsons'/>
+		 <br/>
+	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+	<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:restricted' %}'>Restricted</a></li>
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:index' %}'>Top</a></li>
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:add_category'%}'> Add a new Category</a></li>
+	</ul>
+</nav>
+{% endblock %}
+{%block footer %}
+
+{% endblock %}

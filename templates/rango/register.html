@@ -1,0 +1,30 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Register
+{% endblock %}
+{% block sidebar_block %}
+<img src="{% static "images/rango.jpg" %}" class="rounded img-fluid " style="width:1200px; height: 350px">
+{% endblock %}
+
+{% block side_bar %}
+{% endblock %}
+{% block body_block %}
+	{% if registered %}
+		<h3><strong>Thanks for registering!</strong></h3>
+		<h3><a href='{% url 'rango:login' %}'>Login</a></h3>
+	{% else %}
+		<h2 class="text-info"><strong>Register here!</strong></h2>
+		<form id="user_form" method ="post" action="{% url 'rango:register' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- Display each form-->
+		{{ user_form.as_p}}
+		{{ profile_form.as_p }}
+		<!-- Provide a button to click to submit the form -->
+		<button type="submit" name="submit" value="Register" class="btn btn-primary">Register</button>
+		</form>
+	{% endif %}
+{% endblock %}
+{% block footer %}
+{% endblock %}

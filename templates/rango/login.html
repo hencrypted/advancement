@@ -1,0 +1,33 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+ Login
+{% endblock %}
+{% block sidebar_block %}
+<img src="{% static "images/rango.jpg" %}" class="rounded img-fluid " style="width:1200px; height: 300px">
+{% endblock %}
+{% block body_block %}
+<h2 class="text-info"> Login to rango </h2><hr/>
+<form id='login_form' method='post' action='{% url 'rango:login' %}'>
+	{% csrf_token %}
+	<div class="form-group">
+	<label for='username'>Username</label>
+	<input type='text' name='username' value='' size='50' class="form-control" id="username" placeholder="Username" />
+	</div>
+	<div class="form-group">
+	<label for='password'>Password</label>
+	<input type='password' name='password' value='' size='50' class="form-control" id="password" placeholder="Password"/>
+	</div>
+	<label class="form-check-label">
+	<input class="form-check-input" type="checkbox">Remember me
+	</label><br/>
+	<button type='submit' value='submit' class="btn btn-primary">Submit</button>
+</form>
+{% if error_message %}
+	<h3><strong>{{ error_message }}<strong></h3>
+	<h3>Click <a href='{% url 'rango:register' %}'>here</a> to register</h3>
+{% endif %}
+{% endblock %}
+{% block footer %}
+<h3><a href='{% url 'rango:index' %}'>Back</a></h3>
+{% endblock %}

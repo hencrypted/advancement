@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en"> <!--Essential for HTML5-->
+<head>
+    <title>Bootstrap 4</title>
+    <meta charset="utf-8"> <!--Essential for HTML5-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- JQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Popper JS-->
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!--Latest compiled javascript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!--With Popper JS and Jquery you dont need bootstrap CSS -->
+    <!--
+    width=device-width: sets the width of the page to follow the screen-width of the device
+    initial-scale=1: sets the initial zoom level when the page is first loaded by the browser
+-->
+</head>
+<body>
+<!--
+    Containers: Are required to wrap site contents. Container forms
+    a. container: class responsive fixed width container
+    b. container-fluid: class for a full width container, spanning the entire width of the viewport
+-->
+  <hr/>
+  <div class="text-center">
+    <h2><strong>CONTAINERS</strong></h2>
+  </div>
+  <hr/>
+  <div class="container">
+    <h1> My Very first Bootstrap Page using class ="container"</h1>
+    <p>This is some text</p>
+  </div>
+  <hr/>
+  <div class="container-fluid">
+    <h1> My Very first Bootstrap Page using class="container-fluid"</h1>
+    <p>This is some text</p>
+  </div>
+   <!-- GRIDS
+    Total of 12 columns
+    Grid classes: 1. col- (extra small devices) 2. col-sm-(small devices) 3. col-md-(medium devices) 4. col-lg- (large devices) 5. col-xl- (xlarge devices) 
+    NB Each class scales up !! To set the same widths for sm and md , only specify sm
+  ` <div class="row">
+      <div class="col-*-*">
+      </div>
+    </div>
+    The first star represents the responsiveness; sm, md..., the second a number, which should add up to 12 for each row. Specifying class="col" allows bootstrap to automatically...
+-->
+  <div class="text-center">
+    <h2><strong>GRIDS</strong></h2>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-sm-3">col-sm-3</div>
+    <div class="col-sm-3">col-sm-3</div>
+    <div class="col-sm-3">col-sm-3</div>
+    <div class="col-sm-3">col-sm-3</div>
+  </div>
+<!--Text or typography
+  Default settings: font-size=16px, line-height=1.5, font-family="Helvetica Neue", Helvetica, Arial, sans-serif 
+  <p> elements have : margin-top: 0 and margin-buttom: 1 rem(16px by default)
+    <h1> - <h6> (headings)
+    <display-1> -  <display-4> : Used to stand out more than normal headings
+    <small> : used to create  a lighter, secondary text in any heading
+    <mark> : with a yellow background color and some padding
+    <abbr> : element with a dotted border bottom
+-->
+  <hr/>
+  <div class="text-center">
+    <h2><strong>TEXT OR TYPOGRAPHY</strong><br/><small>Headings</small></h2>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-sm-2"><h1> "h1" Bootstrap heading</h1><small>"small"Secondary text</small><mark>mark</mark></div>
+    <div class="col-sm-2"><h2> "h2" Bootstrap heading</h2><small>"small"Secondary text</small><mark>mark</mark></div>
+    <div class="col-sm-2"><h3> "h3" Bootstrap heading</h3><small>"small"Secondary text</small><mark>mark</mark></div>
+    <div class="col-sm-2"><h4> "h4" Bootstrap heading</h4><small>"small"Secondary text</small><mark>mark</mark></div>
+    <div class="col-sm-2"><h5> "h5" Bootstrap heading</h5><small>"small"Secondary text</small><mark>mark</mark></div>
+    <div class="col-sm-2"><h6> "h6" Bootstrap heading</h6><small>"small"Secondary text</small><mark>mark</mark></div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="display-1">class= "display-1" </div>
+    <div class="display-2">class= "display-2"</div><hr/>
+    <div class="display-3">class="display-3"</div>
+    <div class="display-4">class="display-4" </div>
+  </div>
+  <hr/>
+  <div class="font-weight-bold">
+    <p class="text-center">class=font-weight-bold</p>
+  </div>
+  <hr/>
+  <div class="font-italic">
+    <p class="text-center">class=font-italic</p>
+  </div>
+  <hr/>
+  <div class="font-weight-light">
+    <p class="text-center">class=font-weight-light</p>
+  </div>
+  <hr/>
+  <div class="font-weight-normal">
+    <p class="text-center">class=font-weight-normal</p>
+  </div>
+  <hr/>
+  <div class="lead">
+    <p class="text-center">element: lead</p>
+  </div>
+  <hr/>
+  <div class="small">
+    <p class="text-center">element: small</p>
+  </div>
+  <hr/>
+  <div class="text-center">
+    <p>class=centered</p>
+  </div>
+  <div class="text-sm-center">
+    <p class="text-center">class=text-*-center<br/>where x==responsiveness</p>
+  </div>
+  <hr/>
+  <div class="text-right">
+    <p>class=text right</p>
+  </div>
+  <hr/>
+  <div class="text-sm-right">
+    <p>class=text-*-right<br/>where x==responsiveness</p>
+  </div>
+  <hr/>
+  <div class="text-justify">
+    <p>class=text-justify</p>
+  </div>
+  <hr/>
+  <div class="text-monospace">
+    <p>class=text-monospace</p>
+  </div>
+  <hr/>
+  <div class="text-nowrap">
+    <p>class=text-nowrap</p>
+  </div>
+  <hr/>
+  <div class="text-lowercase">
+    <p>class=Text-lowercase</p>
+  </div>
+  <hr/>
+  <div class="text-uppercase">
+    <p>class=text-uppercase</p>
+  </div>
+  <hr/>
+  <div class="text-capitalize">
+    <p>class=text-capitalize</p>
+  </div>
+  <hr/>
+  <div class="initialism">
+    <p>class=initialism</p>
+  </div>
+  <hr/>
+  <div class="list-unstyled">
+    <p>class=list-unstyled</p>
+  </div>
+  <hr/>
+  <div class="list-inline">
+    <p>claass=list-inline</p>
+  </div>
+  <hr/>
+  <div class="pre-scrollable">
+    <p>class=pre-scrollable</p>
+  </div>
+  <hr/>
+  <div class="text-center">
+    <h2><strong>COLORS</strong></h2>
+    <small>Text colors<small>
+  </div>
+<!-- contextual colors can also be  used on linmks:
+  primary link, muted link...
+-->
+  <hr/>
+  <div class="text-muted">
+    <p>class=text-muted</p>
+  </div>
+  <hr/>
+  <div class="text-primary">
+    <p class="text-center">class=text-primary</p>
+  </div>
+  <hr/>
+  <div class="text-success">
+    <p class="text-right">class=text-success</p>
+  </div>
+  <hr/>
+  <div class="text-info">
+    <p>class=text-info</p>
+  </div>
+  <hr/>
+  <div class="text-warning">
+    <p class="text-center">class=text-warning</p>
+  </div>
+  <hr/>
+  <div class="text-danger">
+    <p class="text-center">class=text-danger</p>
+  </div>
+  <hr/>
+  <div class="text-secondary">
+    <p class="text-right">class=text-secondary</p>
+  </div>
+  <hr/>
+  <div class="text-white">
+    <p>class=text-white</p>
+  </div>
+  <hr/>
+  <div class="text-dark">
+    <p class="text-center">class=text-dark</p>
+  </div>
+  <hr/>
+  <div class="text-body">
+    <p class="text-right">class=text-body</p>
+  </div>
+  <hr/>
+  <div class="text-light">
+    <p>class=text-light</p>
+  </div>
+  <hr/>
+   <div class="success link">
+    <a href="#">class=success link</a>
+  </div>
+  <hr/> 
+  <div class="text-black-50">
+    <p>class=text-black-50</p>
+  </div>
+  <hr/>
+  <div class="text-white-50">
+    <p>class=text-white-50</p>
+  </div>
+  <hr/>
+  <div class="container">
+    <div class="bg-warning">
+      <h3 class="text-dark"> class=bg-warning with class=text-dark and class=container</h3>
+    </div>
+  </div>
+  <hr/>
+  <div class="text-center">
+    <h2><strong>TABLES</strong></h2>
+  </div>
+  <hr/>
+  <table class="table">
+    <tr>
+      <th>class=table; tr=1; th1</th>
+      <th>class=table; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class=table; tr=1; td1</th>
+      <td>class=table; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/> 
+  <table class="table-striped">
+    <tr>
+      <th>class=table-striped; tr=1; th1</th>
+      <th>class=table-striped; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class=table-striped; tr=1; td1</th>
+      <td>class=table-striped; tr=2; td2</th>
+    </tr>
+  </table>
+  <hr/>
+  <table class="table-bordered">
+    <tr>
+      <th>class="table-bordered"; tr=1; th1</th>
+      <th>class="table-bordered"; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class="table-bordered"; tr=1; td1</th>
+      <td>class="table-bordered"; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/>
+  <table class="table-hover">
+    <tr>
+      <th>class="table-hover"; tr=1; th1</th>
+      <th>class="table-hover"; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class="table-hover"; tr=1; td1</th>
+      <td>class="table-hover"; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/>
+  <table class="table-dark">
+    <tr>
+      <th>class="table-darkdark"; tr=1; th1</th>
+      <th>class="table-dark"; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class="table-dark"; tr=1; td1</th>
+      <td>class="table-dark"; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/>
+  <table class="table-dark table-striped">
+    <tr>
+      <th>class="table-dark table-striped"; tr=1; th1</th>
+      <th>class="table-dark table-striped"; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class="table-dark table-striped"; tr=1; td1</th>
+      <td>class="table-dark table-striped"; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/>
+  <table class="table-borderless">
+    <tr>
+      <th>class="table-borderless"; tr=1; th1</th>
+      <th>class="table-borderless"; tr=2; th2</th>
+    </tr>
+    <tr>
+      <td>class="table-borderless"; tr=1; td1</th>
+      <td>class="table-borderless"; tr=2; td2</th>
+    </tr>
+  </table> 
+  <hr/>
+  <h3 class="text-right">Contextual classes can be used to color "table" "tr" and "td"</h3>
+  <hr/>
+  <div class="text-center">
+    <h2><strong>IMAGES</strong><br/><small>Shapes</small></h2>
+  </div>
+  <hr/>
+  <img src="{% static "images/rango.jpg" %}" class="rounded" alt="Rango"/>
+  <h5 class="text-secondary">class=rounded</h5>
+ <hr/>
+  <img src="{% static "images/rango.jpg" %}" class="rounded-circle" alt="Rango"/>
+  <h5 class="text-success">class=rounded-circle</h5>
+ <hr/>
+  <img src="{% static "images/rango.jpg" %}" class="img-thumbnail" alt="Rango"/>
+  <h5 class="text-warning">class=img-thumbnail(bordered)</h5>
+  <h2><small>Aligning images</small><h2>
+  <img src="{% static "images/rango.jpg" %}" class="float-left" alt="Rango"/>
+  <h5 class="text-success">class=float-left</h5>
+
+  <img src="{% static "images/rango.jpg" %}" class="float-right" alt="Rango"/>
+  <h5 class="text-right" >class=float-right</h5>
+  <h2><small>Centered image</small><h2>
+  <img src="{%static "images/simpsons.jpg"%} "class="mx-auto d-block"/>
+  <h4 class="text-center">Responsive Images</h4>
+  <img src="{% static "images/rango.jpg" %}" class="img-fluid"/>
+  <h2 class="text-center">class=img-fluid ; max-width=100% and height=auto</h2>
+  <hr/>
+  <div class="bg-success" class="container-fluid">
+    <h2 class="text-center">Jumbotron</h2>
+  </div>
+  <hr/>
+ <!-- A jumbotron indicates a big grey box for calling extra attention to some special content or informaion. You can put nearly any valid HTML, Bootstrap elements/classes inside a jumbotron
+ --> 
+  <div class="jumbotron">
+    <h1>Jumbotron<br/><small>class=jumbotron</small></h1>
+  </div>
+  <hr/>
+  <h5 class="text-center">Full-width Jumbotron</h5>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h4>class=jumbotron jumbotron-fluid</h4>
+        <h5>A full-width jumbotron without rounded borders</h5>
+        <h5>with class=container/container-fluid </h5>
+    </div>
+  </div>
+  <h2 class="text-center">Alert</h2>
+    <div class="alert">
+    <strong>class=alert </strong><br>
+    <a href="#" class="alert-link">class=alert-link</a>
+  </div>
+  <div class="alert alert-success">
+    <strong>class=alert alert-success</strong><br>
+    <a href="#" class="alert-link">class=alert-link</a>
+  </div>
+  <h2 class="text-center">Closing alert</h2>
+<!--
+  &times : (*) is an HTML entity that is the preferd icon for close buttons, rather than
+  the letter "x"
+
+-->  
+  <div class="alert alert-info alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>class=alert alert-success alert-dismissible ; 
+      :to a link or button:class=close data-dismiss=alert</strong>
+  </div>
+  <h4 class="text-center">Closes by slowly fading</h4>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>class=alert alert-danger alert-dismissible fade show; class=close data-dismiss; "andtimes;"</strong>
+  </div>
+  <h class="text-center"> Defining an HTML TABLE</h2>
+    <table>
+      <tr>
+        <th>"table" tr=table row1 ;th=table header1</th>
+        <th>"table" tr=table row2 ;th=table header12</th>
+      </tr>
+      <tr>
+        <td>td= table data1</td>
+        <td>td= table data2</td>
+      </tr>
+    </table>  
+  <div class="jumbotron">
+    <div class="bg-default">
+      <p class="display-4">FGHJKLfghjkghjknmnm</p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <table>
+      <tr>
+        <th class="thead-dark">tableheader, class=thead-dark</th>
+        <th class="thead-dark">thead-light</th>
+      </tr>
+    </table>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <th>class=table-responsive</th>
+        <th>class=table-responsive</th>
+      </tr>
+      <tr>
+        <td>class=table-responsive</td>
+        <td>class=table-responsive</td>
+      </tr>
+      <tr>
+        <td>class=table-responsive</td>
+        <td>class=table-responsive</td>
+      </tr>
+    </table>
+  </div>
+  <div class="text-center">
+    <h2>Buttons</h2>
+  </div>
+  <div class="container">
+    <h4>Button Styles</h4>
+    <button type="button" class="btn">class=btn</button>
+    <button type="button" class="btn btn-primary">class=btn btn-primary</button>
+    <button type="button" class="btn btn-secondary">class=btn btn-secondary</button>
+    <button type="button" class-"btn btn-success">class=btn btn-success</button>
+    <button type="button" class="btn btn-info">class=btn btn-info</button>
+    <button type="button" class="btn btn-warning">class=btn btn-warning</button>
+    <button type="button" class="btn btn-danger">class=btn btn-danger</button>
+    <button type="button" class="btn btn-dark">class=btn btn-dark</button>
+    <button type="button" class="btn btn-light">class=btn btn-light</button>
+    <button type="button" class="btn btn-link">class=btn btn-link</button>  
+    <a href="#" class="btn btn-info" role="button">Link Buttons</a>
+    <button type="button" class="btn btn-info">Button</button>
+    <input type="button" class="btn btn-info" value="Input Button"/>
+    <input type="submit" class="btn btn-info" value="Submit Button"/>
+    <h4>Button Outline</h4>
+    <p>class=btn btn-outline-*(contextualcolor)</p>
+    <button type="button" class="btn btn-outline-primary">class=btn btn-outline-primary</button>
+    <h4>Button Sizes</h4>
+    <p>class=btn btn-*(contextualcolor) btn-*(lg,sm,default)</p>
+    <button type="button" class="btn btn-primary btn-lg">class="btn btn-lg"</button>
+    <h4>Button Level Buttons</h4>
+    <p>class=btn btn-block</p>
+    <button type="button" class="btn btn-primary btn-block">class=btn btn-block</button>
+    <h4>Active/Disabled Buttons</h4>
+    <p> "a" elements do not support the disabled attribute but can use class=disabled
+      to make it appear disabled</p>
+    <button type="button" class= "btn-primary"disabled>Disabled Primary</button>
+    <a href="#" class="btn btn-primary disabled">class=btn btn-primary disabled Link</a>
+  </div>
+  <div class="dropdown">
+    <button type="button" class="btn btnb primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
+    <div class="dropdown-menu">
+    <a href="#" class="dropdown-item">Link1</a>
+    </div>
+  </div>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+  </ul>
+  <nav class="navbar navbar-expand-sm bg-danger navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Hello World</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="{% static "images/rango.jpg" %}" style="width:40px;">
+    </a>
+  </nav>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardropdown" data-toggle="dropdown">Dropdown Link</a>
+        <div class="dropdow-menu">
+          <a class="dropdown-item" href="#">Link1</a>
+          <a class="dropdown-item" href="#">Link2</a>
+          <a class="dropdown-item" href="#">Link1</a>
+        </div>
+      </li>
+      </ul>
+  </nav>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <form class="form-inline" action="#">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-success" type="submit">Search</button>
+    </form>
+    <span class="navbar-text">Navbar text</span>
+  </nav>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+    data-target="drop">Dropdown button</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="">Link</a>
+      <a class="dropdown-item" href="">Link</a>
+      <a class="dropdown-item" href="">Link</a>
+      <a class="dropdown-item" href="">Link</a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

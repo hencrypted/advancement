@@ -1,0 +1,38 @@
+{% extends 'rango/base.html'%}
+
+{% block title_block %}
+{{ category.name }}
+{% endblock %}
+
+{% block body_block%}
+	{% if category %}
+		{% if error_message %}<strong>{{ error_message }}</strong>{% endif %}
+		<h2><form method='post' action='{% url 'rango:likeCategory' category.slug %}'>
+		{% csrf_token %}
+		<input type="checkbox"  name='category' id='category{{category.slug}}' value='{{ category.slug }}' />
+		<label class="form-check-label" for='category{{ category.slug }}'>{{ category.name }}  </label>
+		<input type='submit' value = 'like' class="bg-secondary btn btn-sm"/>
+		</form>	</h2>
+		<strong>{{category.likes}} like{{category.likes|pluralize}}</strong>	<br/>	
+		{% if pages %}
+		<h3>Pages</h3>
+		<ul>
+			{% for page in pages %}
+				<li><a href='{{page.url}}'>{{ page.title}}</a></li><br/>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<strong>No pages currently in {{category.name}}</strong><br/>
+		{% endif %}
+	{% else %}
+		The specified category does not exist!
+	{% endif %}
+
+	<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-bottom">
+	<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:restricted' %}'>Restricted</a></li>
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:show_category' category.slug %}'>Top</a></li>
+		<li class="nav-item"><a class="nav-link" href='{% url 'rango:add_page' category.slug %}'> Add a new Page</a></li>
+	</ul>
+</nav>
+{% endblock %}
